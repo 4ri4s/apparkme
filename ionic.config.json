@@ -1,0 +1,7 @@
+{
+  "name": "apparkne",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
