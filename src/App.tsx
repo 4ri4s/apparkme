@@ -23,17 +23,22 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import Login from './pages/Login';
 
 const App: React.FC = () => {
-
+/**
+ * Login comun | login-inicial
+ * Login con redes sociales y comun  |  login-social-network
+ * Alta de usuario   | create-user
+ */
   return (
     <IonApp>
       <IonReactRouter>
         <IonSplitPane contentId="main">
-          <Menu />
+          
           <IonRouterOutlet id="main">
-            <Route path="/page/:name" component={Page} exact />
-            <Redirect from="/" to="/page/Inbox" exact />
+            <Route path="/page/:name" component={Login} exact />
+            <Redirect from="/" to="/page/login" exact />
           </IonRouterOutlet>
         </IonSplitPane>
       </IonReactRouter>

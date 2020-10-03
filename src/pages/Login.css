@@ -1,0 +1,22 @@
+
+.alinear{
+    text-align: center;
+}
+
+.dark{
+    height: 100%;
+    background-color: #1D1935;
+}
+
+.text-context-light{
+    color: white;
+}
+
+.icono{
+    background-image: url(http://localhost:8100/assets/icon/curva-verde.svg);
+    padding: 100%;
+}
+
+.input-context-light{
+   background-color: white; 
+}
