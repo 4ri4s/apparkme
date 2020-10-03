@@ -1,3 +1,11 @@
+body{
+    position: relative;
+
+}
+
+body::before{
+    z-index: -2;
+}
 
 .alinear{
     text-align: center;
@@ -10,13 +18,68 @@
 
 .text-context-light{
     color: white;
+        
 }
 
 .icono{
     background-image: url(http://localhost:8100/assets/icon/curva-verde.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
     padding: 100%;
+    z-index: -1;
 }
 
-.input-context-light{
-   background-color: white; 
+input[type=text]{
+    z-index: 1;    
+    position: relative;
+    background-color: #EFEFEF;
+    color:#8E8E8E;
+    font-weight: bold;
+    font-size: larger;
+    border-color: #8E8E8E;
 }
+
+a{
+    z-index: 1;
+    position: relative;
+    color: #8E8E8E;
+}
+
+
+input[type=button]{
+    z-index: 1;    
+    position: relative;
+    background-color: black;
+    border-color: black;
+    color: white;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.ico-unlam{
+    position: relative;
+    z-index: 1;
+}
+
+
+
+.the-blur{
+    position: fixed;
+    top:0;
+    width: 100%;
+    min-height: 50px;
+    margin-bottom: 20px;
+    background: rgba(0,0,0,.4);
+    z-index:1010;
+    -webkit-filter: blur(20px);
+    -moz-filter: blur(20px);
+    -o-filter: blur(20px);
+    -ms-filter: blur(20px);
+    filter: blur(20px);
+ }
+
+ icon-apparkme-pc{
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+ }
+
