@@ -14,36 +14,40 @@ const Login: React.FC = () => {
     <IonPage>
         <IonContent fullscreen className="alinear">
 
-            <div className="dark container d-block d-sm-none" >
-                
-                <br></br>
-                <img src="http://localhost:8100/assets/icon/logo-apparkame.svg"></img>
-                <br></br>
-                <br></br>
-                <div className="container">
-                    <h2 className="text-context-light" >Bienvenido de vuelta!</h2>
-                </div>
-                <br></br>
-                <br></br>
-                <form >
-                    <input type="text" className="form-control" placeholder="MAIL O TELEFONO"/>
+            <div className="dark container d-block d-sm-none icono no-padding-top" >
+                <div className="arriba">
                     <br></br>
-                    <input type="text" className="form-control" placeholder="CONTRASEÑA"/>
-                </form>
-                <a href="#">
-                    OLVIDE MI CONTRASEÑA
-                </a>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <input type="button" className="form-control" value="Ingresar"></input>
-                <br></br>
-                <img className="ico-unlam" src="http://localhost:8100/assets/icon/unlam_logo.png" ></img>
+                    <img src="assets/icon/logo-apparkame.svg"></img>
+                    <br></br>
+                    <div className="container">
+                        <h2 className="text-context-light" >Bienvenido de vuelta!</h2>
+                    </div>
+                    <br></br>
+                    <form >
+                        <input type="text" className="form-control" placeholder="MAIL O TELEFONO"/>
+                        <br></br>
+                        <input type="text" className="form-control" placeholder="CONTRASEÑA"/>
+                    </form>
+                    <a href="#">
+                        OLVIDE MI CONTRASEÑA
+                    </a>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <input type="button" className="form-control" value="Ingresar"></input>
+                    <br></br>
+
+                    <footer className="footer">
+                        <img className="ico-unlam" src="assets/icon/unlam_logo.png" ></img>
+
+                    </footer>
+                </div>
+                
             </div>
             
             <div>
-                <i className="icono"></i>
+                
                 
                 {/* 
                     LO DE ABAJO ES PARA MODO PC O DE TAMAÑO MAYOR A UN CELULAR
@@ -78,9 +82,10 @@ const Login: React.FC = () => {
                         </ul>
                     </div>
                     </nav>
+                    <img className="icon-apparkme-pc" src="assets/icon/logo-apparkame.svg"></img>
                 </div>
 
-                <img className="icon-apparkme-pc" src="http://localhost:8100/assets/icon/logo-apparkame.svg"></img>
+               
 
             </div>
         </IonContent>
