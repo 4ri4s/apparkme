@@ -1,18 +1,21 @@
-import React, { useState } from 'react';
-import { Container, FormControl, InputLabel, Input, FormHelperText } from '@material-ui/core'
+import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import axios from 'axios';
 
+import React, { useState } from 'react';
+import { useParams } from 'react-router';
+import {FacebookLoginButton , GoogleLoginButton} from 'react-social-login-buttons';
+// import ExploreContainer from '../components/ExploreContainer';
 import './Register.css';
 
-
-
-export default function Register() {
-
+const Register: React.FC = () => {
+    const { name } = useParams<{ name: string; }>();
     const [datos, setDatos] = useState({
-        nombre: '',
-        apellido: '',
-        mail: '',
-        telefono: '',
-        password: ''
+        name: '',
+        surname: '',
+        login: '',
+        telephone: '',
+        password: '',
+        dni: ''
     })
 
     const handleInputChange = (e: any) => {
@@ -22,91 +25,83 @@ export default function Register() {
 
         })
     }
-
-    const enviarDatos = (e: any) => {
+    const enviarDatos = async (e: any) => {
         e.preventDefault();
-        console.log(datos.nombre + '  ' + datos.apellido + ' ' + datos.mail + ' ' + datos.telefono + ' ' + datos.password + ' ')
+
+        const resultado = await axios.post("https://mbar.pythonanywhere.com/signup",
+            datos
+        );
+
+        console.log(resultado);
+        alert(resultado)
     }
-
-
 
     return (
 
-        <div className="wrapper">
-            <div className="form-wrapper">
-                <h1>Crear cuenta</h1>
-                <form onSubmit={enviarDatos} >
-                    <div className="nombre">
-                        <label htmlFor="nombre">Nombre</label>
-                        <input
-                            placeholder="NOMBRE"
-                            className="form-control"
-                            type="text"
-                            name="nombre"
+        <IonPage>
+            <IonContent fullscreen className="alinear">
+                <div className="dark container d-block d-sm-none icono" >
+                    
+                    <br></br>
+                    <h1 className="text-context-light">Crear cuenta</h1>
+                    <form onSubmit={enviarDatos}  >
+                        <input type="text" className="form-control"
+                            name="name"
                             onChange={handleInputChange}
-                        ></input>
-                    </div>
-                    <div className="apellido">
-                        <label htmlFor="apellido">Apellido</label>
-                        <input
-                            placeholder="APELLIDO"
-                            className="form-control"
+                            placeholder="NOMBRE" />
+                        <br />
+                        <input className="form-control" 
+                            type="text" 
+                            name="surname" 
+                            onChange={handleInputChange} 
+                            placeholder="APELLIDO" />
+                        <br />
+                        <input className="form-control" 
                             type="text"
-                            name="apellido"
-                            onChange={handleInputChange}
-                        ></input>
-
-                    </div>
-                    <div className="mail">
-                        <label htmlFor="mail">Email</label>
-                        <input
-                            placeholder="MAIL"
-                            className="form-control"
+                            name="dni" onChange={handleInputChange} 
+                            placeholder="DNI" />
+                        <br></br>
+                        <input className="form-control"
                             type="text"
-                            name="mail"
-                            onChange={handleInputChange}
-                        ></input>
-
-                    </div>
-                    <div className="telefono">
-                        <label htmlFor="telefono">Telefono</label>
-                        <input
-                            placeholder="TELEFONO"
-                            className="form-control"
-                            type="text"
-                            name="telefono"
-                            onChange={handleInputChange}
-                        ></input>
-
-                    </div>
-
-                    <div className="password">
-                        <label htmlFor="password">Contraseña</label>
-                        <input
-                            placeholder="CONTRASEÑA"
-                            className="form-control"
+                            name="login" 
+                            onChange={handleInputChange} 
+                            placeholder="MAIL" />
+                        <br></br>
+                        <input className="form-control"
+                            type="text" 
+                            name="telephone" 
+                            onChange={handleInputChange} 
+                            placeholder="NUMERO DE TELEFONO" />
+                        <br></br>
+                        <input className="form-control" 
                             type="password"
-                            name="password"
-                            onChange={handleInputChange}
-                        ></input>
+                            name="password" 
+                            onChange={handleInputChange} 
+                            placeholder="CONTRASEÑA" />
+                    <br></br>
+                    <input type="submit" className="form-control" value="Crear nueva cuenta"></input> 
+                 
+                    </form>     
+                    <div className="text-center pt-2">
+                       <span>  O inicia sesion con:</span> 
+                    </div> 
+                    <GoogleLoginButton>Continuar con Google</GoogleLoginButton>
+                    <FacebookLoginButton> Continuar con Facebook</FacebookLoginButton>
+                    <div className="text-center">
+                        <a href="#">Politica de privacidad</a> 
+                        <span className="p-2">  </span>  
+                        <a href="#">Terminos del servicio</a> 
+                    </div>  
+    
+                    <br></br>
+             
+                    
+                </div>
 
-                    </div>
-                    <div className="createAccount">
-                        <button type="submit">Crear nueva cuenta</button>
 
-                    </div>
+            </IonContent>
+        </IonPage>
+    );
+};
 
-                    <div className="createAccount">
-                        <button > Continuar con Google</button>
-                    </div>
-                    <div className="createAccount">
-                        <button > Continuar con Facebook</button>
-                    </div>
-
-
-                </form>
-            </div>
-        </div>
-
-    )
-}
+export default Register;
