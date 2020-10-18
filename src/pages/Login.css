@@ -1,37 +1,27 @@
-body{
-    position: relative;
 
-}
-
-body::before{
-    z-index: -2;
-}
 
 .alinear{
     text-align: center;
 }
 
 .dark{
-    height: 100%;
     background-color: #1D1935;
 }
 
 .text-context-light{
     color: white;
-        
 }
 
 .icono{
-    background-image: url(/assets/icon/curva-verde.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 100%;
-    z-index: -1;
+    background-image: url(/assets/icon/curva-verde.svg) !important;
+    background-repeat: no-repeat !important;
+    background-size: auto 100vh !important;
+    height: 100vh !important;
+    width: 100vw !important;
+    
 }
 
-input[type=text]{
-    z-index: 1;    
-    position: relative;
+input[type=text], input[type=password]{
     background-color: #EFEFEF;
     color:#8E8E8E;
     font-weight: bold;
@@ -40,14 +30,10 @@ input[type=text]{
 }
 
 a{
-    z-index: 1;
-    position: relative;
     color: #8E8E8E;
 }
 
-input[type=button]{
-    z-index: 1;    
-    position: relative;
+input[type=submit]{
     background-color: black;
     border-color: black;
     color: white;
@@ -57,26 +43,22 @@ input[type=button]{
 }
 
 .ico-unlam{
-    position: relative;
-    z-index: 1;
     margin-bottom: 10px;
 }
 
 
- icon-apparkme-pc{
-    -webkit-filter: invert(100%);
-    filter: invert(100%);
+.icon-apparkme-pc{
+    margin-right: 30px;
  }
 
-.no-padding-top{
-    padding-top: 0 ;
-}
 
 .footer {
-    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    color: white;
     text-align: center;
+}
+
+ion-content{
+    --ion-background-color: #1D1935;
 }
