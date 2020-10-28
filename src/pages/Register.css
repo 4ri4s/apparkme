@@ -1,11 +1,19 @@
+body{
+    
+}
 
+body::before{
+    
+}
 
 .alinear{
     text-align: center;
 }
 
 .dark{
-    background-color: #1D1935;
+  
+    background-color: #36E491;
+
 }
 
 .text-context-light{
@@ -13,12 +21,13 @@
 }
 
 .icono{
-    background-image: url(/assets/icon/curva-verde.svg) !important;
+
+    background-image: url(/assets/icon/franja-curva.svg) ;
     background-repeat: no-repeat !important;
-    background-size: auto 100vh !important;
+    background-size: 50 100vh !important;
     height: 100vh !important;
     width: 100vw !important;
-    
+    background-position:bottom;
 }
 
 input[type=text], input[type=password]{
@@ -32,6 +41,7 @@ input[type=text], input[type=password]{
 a{
     color: #8E8E8E;
 }
+
 
 input[type=submit]{
     background-color: black;
@@ -47,8 +57,9 @@ input[type=submit]{
 }
 
 
-.icon-apparkme-pc{
-    margin-right: 30px;
+ icon-apparkme-pc{
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
  }
 
 
@@ -57,8 +68,4 @@ input[type=submit]{
     bottom: 0;
     width: 100%;
     text-align: center;
-}
-
-ion-content{
-    --ion-background-color: #1D1935;
 }
