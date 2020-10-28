@@ -1,0 +1,71 @@
+body{
+    
+}
+
+body::before{
+    
+}
+
+.alinear{
+    text-align: center;
+}
+
+.dark{
+  
+    background-color: #36E491;
+
+}
+
+.text-context-light{
+    color: white;
+}
+
+.icono{
+
+    background-image: url(/assets/icon/franja-curva.svg) ;
+    background-repeat: no-repeat !important;
+    background-size: 50 100vh !important;
+    height: 100vh !important;
+    width: 100vw !important;
+    background-position:bottom;
+}
+
+input[type=text], input[type=password]{
+    background-color: #EFEFEF;
+    color:#8E8E8E;
+    font-weight: bold;
+    font-size: larger;
+    border-color: #8E8E8E;
+}
+
+a{
+    color: #8E8E8E;
+}
+
+
+input[type=submit]{
+    background-color: black;
+    border-color: black;
+    color: white;
+    font-weight: bold;
+    font-size: larger;
+    margin-bottom: 10px;
+}
+
+.ico-unlam{
+    margin-bottom: 10px;
+}
+
+
+ icon-apparkme-pc{
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+ }
+
+
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}

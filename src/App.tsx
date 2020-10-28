@@ -1,4 +1,4 @@
-import Menu from './components/Menu';
+// import Menu from './components/Menu';
 import Page from './pages/Page';
 import React from 'react';
 import { IonApp, IonRouterOutlet, IonSplitPane } from '@ionic/react';
@@ -21,6 +21,8 @@ import '@ionic/react/css/text-transformation.css';
 import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 
+import Register from './pages/Register'
+
 /* Theme variables */
 import './theme/variables.css';
 import Login from './pages/Login';
@@ -35,9 +37,11 @@ const App: React.FC = () => {
     <IonApp>
       <IonReactRouter>
         <IonSplitPane contentId="main">
+          {/* <Menu /> */}
           
           <IonRouterOutlet id="main">
             <Route path="/page/login" component={Login} exact />
+            <Route path="/page/signup" component={Register} exact />
             <Redirect from="/" to="/page/login" exact />
           </IonRouterOutlet>
         </IonSplitPane>

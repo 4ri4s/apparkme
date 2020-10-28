@@ -5,9 +5,11 @@ import { useParams } from 'react-router';
 import ExploreContainer from '../components/ExploreContainer';
 import axios from 'axios';
 import './Login.css';
-
+import { useLocation } from 'react-router-dom';
 const Login: React.FC = () => {
 
+    const location = useLocation();
+    
     const [datos, setDatos] = useState({
         login: '',
         password: ''
@@ -87,7 +89,7 @@ const Login: React.FC = () => {
                             <a className="nav-link" href="#">Acerca de</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Registrate</a>
+                            <a className="nav-link" href="/page/signup">Registrate</a>
                         </li>
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
