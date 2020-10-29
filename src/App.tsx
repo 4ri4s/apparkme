@@ -23,17 +23,19 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
-
+import Login from './pages/LoginWithFaceGoogle'
 const App: React.FC = () => {
 
   return (
     <IonApp>
       <IonReactRouter>
         <IonSplitPane contentId="main">
-          <Menu />
+          {/* <Menu /> */}
           <IonRouterOutlet id="main">
-            <Route path="/page/:name" component={Page} exact />
-            <Redirect from="/" to="/page/Inbox" exact />
+            <Route path="/page/:name" component={Login} exact />
+            <Redirect from="/" to="/page/Inbox" exact 
+            
+            />
           </IonRouterOutlet>
         </IonSplitPane>
       </IonReactRouter>
