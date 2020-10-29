@@ -1,19 +1,26 @@
-import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonRouterOutlet, IonTitle, IonToolbar } from '@ionic/react';
 import { Link, TextField } from '@material-ui/core';
-import React, { useState } from 'react';
-import { useParams } from 'react-router';
+import React, { useEffect, useState } from 'react';
+import { Redirect } from "react-router-dom";
+import { Route, useParams } from 'react-router';
 import ExploreContainer from '../components/ExploreContainer';
 import axios from 'axios';
 import './Login.css';
 import { useLocation } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
+import Register from './Register';
 const Login: React.FC = () => {
 
     const location = useLocation();
-    
+    const history = useHistory();
     const [datos, setDatos] = useState({
         login: '',
         password: ''
     })
+    const [guardarDatos, setGuardarDatos] = useState({
+        bandera: false
+    })
+
 
     const handleInputChange = (e: any) => {
         setDatos({
@@ -21,15 +28,27 @@ const Login: React.FC = () => {
             [e.target.name]: e.target.value
         })
     }
+    
+    useEffect(() => {
+        if(!localStorage.getItem('access_token') == null || localStorage.getItem('access_token')){ 
+            console.log("HOLA SI PASO POR ACA");
+            history.push("/page/signup");
+        }
+    }) 
+        
+    
 
     const enviarDatos = async (e:any) => {
         e.preventDefault();
+        var access_token : any;
         const resultado = await axios.post("https://mbar.pythonanywhere.com/login", 
             datos
         );
-
-        console.log(resultado);
-        alert(resultado.data.access_token);
+        access_token = await resultado;
+        
+        localStorage.setItem('access_token', access_token.data.access_token);
+        
+        
     }
 
   return (
